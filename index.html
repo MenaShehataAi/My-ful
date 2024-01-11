@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+<head>
+  <style>
+    /* تنسيق الزر */
+    .button {
+      background: linear-gradient(60deg,red,blue);
+      border: transparent;
+      border-radius: 10px;
+      width: 70px;
+      height: 40px;
+      position: relative;
+      right:-270px;
+      
+    }
+
+    /* تنسيق القائمة */
+    .menu {
+      
+      
+            border-radius: 18px;
+      display: none;
+      position: absolute;
+      background: linear-gradient( 60deg,red,blue);
+      position: absolute;
+      top: 70px;
+      left: 150px;
+      
+      width: 10px;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba (0,0,0,0.2);
+      z-index: 1;#FF000
+    }
+
+    /* تنسيق الروابط داخل القائمة */
+    .menu a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-family: monospace;
+    }
+
+    /* تغيير لون الروابط عند تحويم الماوس */
+    .menu a:hover {
+      background: #000000;
+      border-radius:19px;
+    }
+    
+    
+    
+    
+    
+  </style>
+</head>
+<body>
+
+
+
+  <!-- إنشاء زر يستدعي دالة JavaScript -->
+  <button class="button" onclick="showMenu()">قائمة</button>
+
+  <!-- إنشاء قائمة مخفية تحتوي على بعض الروابط -->
+  <div class="menu" id="myMenu">
+   <a href="#">التواصل مع المطور</a>
+    <a href="#">الصفحة الرئيسية</a>
+    <a href="#">الأخبار</a>
+    <a href="#">الاتصال</a>
+    <a href="#">حول</a>
+
+  </div>
+
+  <script>
+    // كتابة دالة JavaScript لعرض أو إخفاء القائمة
+    function showMenu() {
+      // الحصول على عنصر القائمة
+      var menu = document.getElementById("myMenu");
+      // تبديل بين إظهار وإخفاء القائمة
+      menu.style.display = menu.style.display === "none" ? "block" : "none";
+    }
+  </script>
+
+<style>
+body {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+  position: relative;
+  left: -65px;
+  top: 10px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+
+  
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
+</head>
+<body>
+
+
+<label class="switch">
+  <input type="checkbox" onclick="myFunction()">
+  <span class="slider round"></span>
+</label>
+
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+</body>
+</html>
